@@ -1,14 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>MIRAIZURA</title>
-    <style type="text/css">
-    </style>
-</head>
-<body>
-<h1>MIRAIZURA<h1>
-    <h2>What is this application?<h2>
-        <p>MIRAIZURA is a diary application not to forget your beautiful memory.</p>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}The service for saving your own diary page on the Web site | Zuramaru{% endblock %}
+
+{% block header%}
+
+<header class="masthead text-center text-white">
+    <div class="masthead-content">
+        <div class="container">
+            <h1 class="masthead-heading mb-0">Zuramaru</h1>
+            <h2 class="masthead-subheading mb-0">Your own diary saving service</h2>
+            <a href="#" class="btn btn-primary btn-xl rounded-pill mt-5">LOG IN</a>
+        </div>
+    </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>
+</header>
+{% endblock %}
+
+{% block contents %}
+<selection>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 order-lg-2">
+                <div class="p-5">
+                    <img class="img-fluid rounded-circle" src="{% static 'img/01.jpg' %}" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="p-5">
+                    <h2 class="display-4">Web Diary</h2>
+                    <p>The diary which enables you to create/edit/delete on the web site</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</selection>
+
+{% endblock %}
