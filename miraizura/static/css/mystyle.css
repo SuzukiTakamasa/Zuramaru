@@ -5,3 +5,5 @@ body, #wrapper {display: flex;
                }
 
 footer {margin-top: auto;}
+
+.my-div-style {margin-top: 6rem;}
