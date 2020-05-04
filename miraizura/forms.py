@@ -14,7 +14,7 @@ class InquiryForm(forms.Form):
         self.fields['name'].widget.attrs['placeholder'] = 'Enter your name'
 
         self.fields['email'].widget.attrs['class'] = 'form-control col11'
-        self.fields['email'].widget.attrs['placeholder'] = 'Enter your Email address'
+        self.fields['email'].widget.attrs['placeholder'] = 'Enter your email address'
 
         self.fields['title'].widget.attrs['class'] = 'form-control col11'
         self.fields['title'].widget.attrs['placeholder'] = 'Enter the title'
