@@ -41,8 +41,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
 
     'django.contrib.sites',
-    'allauth',
-    'allauth.account',
+
 ]
 
 MIDDLEWARE = [
@@ -133,24 +132,6 @@ MESSAGE_TAGS = {
     messages.INFO: 'alert alert-info',
 }
 
-#Authentication
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
-SET_ID = 1
 
-AUTHENTICATION_BACKENDS = (
-    'allauth.account.auth_backends.AuthenticationBackend',
-
-    'django.contrib.auth.backends.ModelBackends',
-)
-
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_USERNAME_REQUIRED = False
-
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-ACCOUNT_LOGOUT_REQUIRED = False
-
-LOGIN_REDIRECT_URL = 'zuramaru:index'
-ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login'
-
-ACCOUNT_LOGOUT_ON_GET = True
