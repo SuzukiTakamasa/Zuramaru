@@ -1,10 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{{% extends 'base.html' %}}
 
-</body>
-</html>
+{% block title %}CONFIRM SIGN UP | Zuramaru{% endblock %}
+
+{% block active_login %}active{% endblock %}
+
+{% block contents %}
+<div class="container">
+    <div class="row">
+        <div class="my-div-style">
+            <h1>USER REGISTRATION</h1>
+
+            {{% if confirmation %}}
+            <p>Click on the button below in order to verify the user registration.</p>
+
+            <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
+                {% csrf_token %}
+                <button class="btn btn-primary" type="submit">VERIFY</button>
+            </form>
+
+            {% else %}
+
+            {% url 'account_email' as_email_url %}
+
+            <p>The link has already been dead due to the expiration. <a href="{{ email_url }}">REAPPLY</a>.</p>
+
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
