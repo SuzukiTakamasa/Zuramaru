@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block title %}LOG IN | Zuramaru{% endblock %}
+
+{% block active_login %}active{% endblock %}
+
+{% block contents %}
+<div class="container">
+    <div class="row">
+        <div class="my-div-style">
+            <h1>LOG IN</h1>
+            <form method="post" action="{% url 'account_login' %}">
+                {% csrf_token %}
+
+                {{ form.as_p}}
+
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+
+                <button class="btn btn-primary" type="submit">LOG IN</button>
+                <p><a class="button secondaryAction" href="{% url 'account_reset_password' %}">Do you forget your password
