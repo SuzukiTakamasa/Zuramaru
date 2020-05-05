@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
 
     'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+
 
 ]
 
@@ -134,4 +137,22 @@ MESSAGE_TAGS = {
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
+SITE_ID = 1
+
+AUTHENTICATION_BACKENDS = (
+    'allauth.account.auth_backends.AuthenticationBackend',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_USERNAME_REQUIRED = False
+
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_REQUIRED = True
+
+LOGIN_REDIRECT_URL = 'zuramaru:index'
+ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login'
+
+ACCOUNT_LOGOUT_ON_GET = True
 
