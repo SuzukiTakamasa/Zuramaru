@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'miraizura.apps.MiraizuraConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
