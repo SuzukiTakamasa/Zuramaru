@@ -8,21 +8,21 @@
 <div class="container">
     <div class="row">
         <div class="my-div-style">
-            <h1>USER REGISTRATION</h1>
+            <h1>User Registration</h1>
 
             {{% if confirmation %}}
             <p>Click on the button below in order to verify the user registration.</p>
 
             <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
                 {% csrf_token %}
-                <button class="btn btn-primary" type="submit">VERIFY</button>
+                <button class="btn btn-primary" type="submit">Verify</button>
             </form>
 
             {% else %}
 
             {% url 'account_email' as_email_url %}
 
-            <p>The link has already been dead due to the expiration. <a href="{{ email_url }}">REAPPLY</a>.</p>
+            <p>The link has already been dead due to the expiration. <a href="{{ email_url }}">Reapply</a>.</p>
 
             {% endif %}
         </div>
