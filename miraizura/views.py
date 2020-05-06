@@ -5,6 +5,9 @@ from django.views import generic
 from .forms import InquiryForm
 from django.urls import reverse_lazy
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .models import Diary
+
 import logging
 
 Logger = logging.getLogger(__name__)
@@ -23,6 +26,13 @@ class InquiryView(generic.FormView):
         Logger.info('Inquiry send by {}'.format(form.cleaned_data['name']))
         return super().form_valid(form)
 
+class DiaryListView(LoginRequiredMixin, generic.ListView):
+    model = Diary
+    template_name = 'diary_list.html'
+
+    def get_queryset(self):
+        diaries = Diary.objects.fillter(user=self.request.user).order_by('-created_at')
+        return diaries
 
 
 
