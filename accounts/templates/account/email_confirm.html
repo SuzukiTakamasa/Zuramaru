@@ -1,4 +1,4 @@
-{{% extends 'base.html' %}}
+{% extends 'base.html' %}
 
 {% block title %}CONFIRM SIGN UP | Zuramaru{% endblock %}
 
@@ -10,7 +10,7 @@
         <div class="my-div-style">
             <h1>User Registration</h1>
 
-            {{% if confirmation %}}
+            {% if confirmation %}
             <p>Click on the button below in order to verify the user registration.</p>
 
             <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
