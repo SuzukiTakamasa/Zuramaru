@@ -17,17 +17,17 @@
                 <div class="clearfix">
                     <a class="btn btn-primary float-right" href="#">New</a>
                 </div>
-                {% for diary in diary_list %}
+                {% for miraizura in diary_list %}
                 <div class="post-preview">
-                    <a href="#">
+                    <a href="{% url 'miraizura:diary_detail' miraizura.pk %}">
                         <h2 class="post-title">
-                            {{ diary.title }}
+                            {{ miraizura.title }}
                         </h2>
                         <h3 class="post-subtitle">
-                            {{ diary.content|truncatechars:20 }}
+                            {{ miraizura.content|truncatechars:20 }}
                         </h3>
                     </a>
-                    <p class="post-meta">{{ diary.created_at }}</p>
+                    <p class="post-meta">{{ miraizura.created_at }}</p>
                 </div>
                 <hr>
                 {% empty %}
