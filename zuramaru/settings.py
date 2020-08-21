@@ -4,7 +4,7 @@ from .settings_common import *
 DEBUG = False
 
 #The list of host name to be permitted
-ALLOWED_HOST = [os.environ.get('ALLOWED_HOSTS')]
+ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS')]
 
 #The directory of locating static files
 STATIC_ROOT = '/usr/share/nginx/html/static'
