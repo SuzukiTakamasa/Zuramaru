@@ -11,7 +11,7 @@
         <div class="my-div-style w-100">
             <form method="POST">
                 {% csrf_token %}
-                <p>Are you really ready to delete?</p>
+                <p>Are you surely ready to delete?</p>
                 <button class="btn btn-primary mt-5" type="submit">Delete</button>
                 <a class="btn btn-secondary mt-5 mt-2" href="{% url 'miraizura:diary_detail' object.pk %}">Cancel</a>
             </form>
