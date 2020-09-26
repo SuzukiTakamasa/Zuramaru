@@ -22,4 +22,4 @@ class TestLogin(LiveServerTestCase):
         password_input.send_keys('')
         self.selenium.find_element_by_class_name('btn').click()
 
-        self.assertEquals('DIAARY LIST | Zuramaru', self.selenium.title)
+        self.assertEquals('DIARY LIST | Zuramaru', self.selenium.title)
