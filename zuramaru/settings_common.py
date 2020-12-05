@@ -160,4 +160,5 @@ ACCOUNT_LOGOUT_ON_GET = True
 
 MEDIA_URL = '/media/'
 
-
+BACKUP_PATH = 'backup/'
+NUM_SAVED_BACKUP = 30
