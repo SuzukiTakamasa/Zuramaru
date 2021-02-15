@@ -69,7 +69,7 @@ class DiaryUpdateView(LoginRequiredMixin, generic.UpdateView):
         return super().form_valid(form)
 
     def form_invalid(self, form):
-        messages.success(self.request, 'The diary has been failed to update.')
+        messages.success(self.request, 'The diary has failed to be update.')
         return super().form_invalid(form)
 
 class DiaryDeleteView(LoginRequiredMixin, generic.DeleteView):
